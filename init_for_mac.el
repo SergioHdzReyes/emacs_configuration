@@ -30,11 +30,14 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(dracula))
  '(custom-safe-themes
-   '("947190b4f17f78c39b0ab1ea95b1e6097cc9202d55c73a702395fc817f899393" default))
+   '("6731049cee8f7cbd542d7b3e1c551f3fab716a92119bd7c77f0bd1ef20849fb8" "28caf31770f88ffaac6363acfda5627019cac57ea252ceb2d41d98df6d87e240" "947190b4f17f78c39b0ab1ea95b1e6097cc9202d55c73a702395fc817f899393" default))
  '(global-flycheck-mode t)
+ '(global-undo-tree-mode t)
  '(global-wakatime-mode t)
+ '(google-translate-default-source-language "en" t)
+ '(google-translate-default-target-language "es" t)
  '(package-selected-packages
-   '(treemacs restclient flycheck-clangcheck flycheck-clang-analyzer auto-complete-clang auto-complete-clang-async auto-complete-c-headers ac-clang dumb-jump web-mode tern org magit google-translate dracula-theme dash-functional company-php ac-php))
+   '(forge twittering-mode undo-tree multiple-cursors wgrep-ag helm-ag ag treemacs restclient flycheck-clangcheck flycheck-clang-analyzer auto-complete-clang auto-complete-clang-async auto-complete-c-headers ac-clang dumb-jump web-mode tern org magit google-translate dracula-theme dash-functional company-php ac-php))
  '(safe-local-variable-values '((flycheck-gcc-language-standard . c99)))
  '(wakatime-python-bin nil))
 (custom-set-faces
@@ -133,12 +136,34 @@ There are two things you can do about this warning:
 
 (global-set-key (kbd "C-c m") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x C-a") "\\ChromePhp::info($, '');")
+;; (global-set-key (kbd "C-c C-a") "cd && source config_emacs && cd && cd Proyectos/Enviaflores/")
 
 ;; Configuracion para GOOGLE TRANSLATE
 (customize-set-variable 'google-translate-default-source-language "en")
 (customize-set-variable 'google-translate-default-target-language "es")
 (global-set-key (kbd "C-c C-t") 'google-translate-query-translate)
 (global-set-key (kbd "C-c C-s") 'google-translate-smooth-translate)
+
+;; Configuracion para Ag
+(setq ag-executable "/usr/local/bin/ag")
+(setq helm-ag-base-command "pt -e --nocolor --nogroup")
+(setq ag-highlight-search t)
+(setq ag-reuse-window t)
+(setq ag-reuse-buffers t)
+
+;; Configuracion para Ido-Mode
+(ido-mode 1)
+
+;; twitter
+(require 'twittering-mode)
+(setq twittering-use-master-password t)
+(setq twittering-icon-mode t)
+
+;; Appearance
+(global-hl-line-mode 1)
+(show-paren-mode 1)
+
 ;; END
 
 (provide 'init)
