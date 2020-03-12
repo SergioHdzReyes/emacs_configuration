@@ -28,24 +28,31 @@ There are two things you can do about this warning:
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(dracula))
+ '(custom-enabled-themes (quote (dracula)))
  '(custom-safe-themes
-   '("6731049cee8f7cbd542d7b3e1c551f3fab716a92119bd7c77f0bd1ef20849fb8" "28caf31770f88ffaac6363acfda5627019cac57ea252ceb2d41d98df6d87e240" "947190b4f17f78c39b0ab1ea95b1e6097cc9202d55c73a702395fc817f899393" default))
+   (quote
+    ("55c2069e99ea18e4751bd5331b245a2752a808e91e09ccec16eb25dadbe06354" "a452345f40a4e1db132963ee8fee1a3018c13115871cb2658db153fad8a0db85" "d362eed16f74bfa8e49df0185a9336184d479e120c41837a5e6f020e0336bf7f" "5f1bd7f67dc1598977e69c6a0aed3c926f49581fdf395a6246f9bc1df86cb030" "6731049cee8f7cbd542d7b3e1c551f3fab716a92119bd7c77f0bd1ef20849fb8" "28caf31770f88ffaac6363acfda5627019cac57ea252ceb2d41d98df6d87e240" "947190b4f17f78c39b0ab1ea95b1e6097cc9202d55c73a702395fc817f899393" default)))
  '(global-flycheck-mode t)
  '(global-undo-tree-mode t)
  '(global-wakatime-mode t)
  '(google-translate-default-source-language "en" t)
  '(google-translate-default-target-language "es" t)
+ '(js-indent-level 4)
+ '(js2-basic-offset 4)
+ '(js2-bounce-indent-p t)
+ '(js2-highlight-level 3)
  '(package-selected-packages
-   '(forge twittering-mode undo-tree multiple-cursors wgrep-ag helm-ag ag treemacs restclient flycheck-clangcheck flycheck-clang-analyzer auto-complete-clang auto-complete-clang-async auto-complete-c-headers ac-clang dumb-jump web-mode tern org magit google-translate dracula-theme dash-functional company-php ac-php))
- '(safe-local-variable-values '((flycheck-gcc-language-standard . c99)))
+   (quote
+    (xref-js2 ac-js2 js2-mode exwm disk-usage forge twittering-mode undo-tree multiple-cursors wgrep-ag helm-ag ag treemacs restclient flycheck-clangcheck flycheck-clang-analyzer auto-complete-clang auto-complete-clang-async auto-complete-c-headers ac-clang dumb-jump web-mode tern org magit google-translate dracula-theme dash-functional company-php ac-php)))
+ '(php-mode-coding-style (quote php))
+ '(safe-local-variable-values (quote ((flycheck-gcc-language-standard . c99))))
  '(wakatime-python-bin nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(js2-error ((t (:foreground "DarkOrange2")))))
 
 
 ;; START
@@ -69,7 +76,23 @@ There are two things you can do about this warning:
         (when (eq $p (point))
           (beginning-of-line))))))
 
+(defun xah-end-of-line-or-block ()
+  "Move cursor to end of line or next paragraph.
+
+• When called first time, move cursor to end of line.
+• When called again, move cursor forward by jumping over any sequence of whitespaces containing 2 blank lines.
+
+URL `http://ergoemacs.org/emacs/emacs_keybinding_design_beginning-of-line-or-block.html'
+Version 2017-05-30"
+  (interactive)
+  (if (or (equal (point) (line-end-position))
+          (equal last-command this-command ))
+      (progn
+        (re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" ))
+    (end-of-line)))
+
 (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
+(global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
 
 (require 'php-mode)
 
@@ -86,6 +109,10 @@ There are two things you can do about this warning:
 
              ;; Enable ElDoc support (optional)
              (ac-php-core-eldoc-setup)
+
+	     (setq indent-tabs-mode nil
+		   tab-width 4
+		   c-basic-offset 4)
 
              ;; Jump to definition (optional)
              (define-key php-mode-map (kbd "M-]")
@@ -145,17 +172,17 @@ There are two things you can do about this warning:
 (global-set-key (kbd "C-c C-t") 'google-translate-query-translate)
 (global-set-key (kbd "C-c C-s") 'google-translate-smooth-translate)
 
-;; Configuracion para Ag
+;; AG
 (setq ag-executable "/usr/local/bin/ag")
 (setq helm-ag-base-command "pt -e --nocolor --nogroup")
 (setq ag-highlight-search t)
 (setq ag-reuse-window t)
 (setq ag-reuse-buffers t)
 
-;; Configuracion para Ido-Mode
+;; IDO-MODE
 (ido-mode 1)
 
-;; twitter
+;; TWITTER
 (require 'twittering-mode)
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
@@ -163,8 +190,18 @@ There are two things you can do about this warning:
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
+;; (global-highlight-changes-mode 1)
 
-;; END
+;; JS2-MODE
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; MAGIT
+(setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+(global-set-key (kbd "C-x C-g") 'magit)
+
+;; HS
+(global-set-key (kbd "C-x C-j") 'hs-toggle-hiding)
+
 
 (provide 'init)
 ;;; init.el ends here
