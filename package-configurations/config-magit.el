@@ -1,4 +1,6 @@
-;; MAGIT
+;;; magit --- Summary
+;;; Commentary:
+;;; Code:
 (use-package magit
   :init
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
@@ -6,3 +8,4 @@
   (setq magit-ediff-dwim-show-on-hunks t))
 
 (provide 'config-magit)
+;;; config-magit.el ends here

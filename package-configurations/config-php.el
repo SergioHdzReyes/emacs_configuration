@@ -1,3 +1,6 @@
+;;; php-mode --- Summary
+;;; Commentary:
+;;; Code:
 (use-package php-mode
   :init
   ;; Funcion para ir a primer caracter de linea o a bloque de texto
@@ -34,46 +37,10 @@
   (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
   (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
 
-  (add-hook 'php-mode-hook
-            '(lambda ()
-               ;; Enable auto-complete-mode
-               (auto-complete-mode t)
-
-               (require 'ac-php)
-               (setq ac-sources '(ac-source-php))
-
-               ;; As an example (optional)
-               (yas-global-mode 1)
-
-               ;; Enable ElDoc support (optional)
-               (ac-php-core-eldoc-setup)
-
-	       (setq indent-tabs-mode nil
-		     tab-width 4
-		     c-basic-offset 4)))
-
-  (add-hook 'php-mode-hook
-            '(lambda ()
-               ;; Enable company-mode
-               (company-mode t)
-               (require 'company-php)
-
-               ;; Enable ElDoc support (optional)
-               (ac-php-core-eldoc-setup)
-
-               (set (make-local-variable 'company-backends)
-                    '((company-ac-php-backend company-dabbrev-code)
-                      company-capf company-files))
-
-               ;; Jump to definition (optional)
-               (define-key php-mode-map (kbd "M-]")
-		 'ac-php-find-symbol-at-point)
-
-               ;; Return back (optional)
-               (define-key php-mode-map (kbd "M-[")
-		 'ac-php-location-stack-back)))
 
   (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
-  (global-set-key (kbd "C-x C-j") 'ac-php-find-symbol-at-point))
+  ;;; (global-set-key (kbd "C-x C-j") 'ac-php-find-symbol-at-point)
+  )
 
 (provide 'config-php)
+;;; config-php.el ends here
