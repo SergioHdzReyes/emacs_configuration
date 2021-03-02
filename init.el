@@ -49,13 +49,15 @@
    '("24714e2cb4a9d6ec1335de295966906474fdb668429549416ed8636196cb1441" default))
  '(package-selected-packages
    '(company-php ac-php forge multiple-cursors multiple-cursor smartparens js2-mode php-mode wgrep-ag wrep-ag helm-ag ag ido-mode wakatime-mode use-package magit flycheck expand-region))
- '(wakatime-cli-path "/usr/local/bin/wakatime")
- '(wakatime-python-bin nil))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq auth-sources '("~/.authinfo"))
+
 (provide 'init)
 ;;; init.el ends here

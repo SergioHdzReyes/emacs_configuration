@@ -27,5 +27,5 @@
 	  )
   )
 
-(provide 'config-magit)
+(provide 'config-autocomplete)
 ;;; config-autocomplete.el ends here
