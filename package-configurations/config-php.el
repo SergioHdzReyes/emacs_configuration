@@ -38,7 +38,6 @@
   (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
 
 
-  (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
   ;;; (global-set-key (kbd "C-x C-j") 'ac-php-find-symbol-at-point)
   )
 

@@ -1,3 +1,6 @@
+;;; config-general --- Summary
+;;; Commentary:
+;;; Code:
 (global-set-key (kbd "s-º") "\\")
 (global-set-key (kbd "s-1") "|")
 (global-set-key (kbd "s-2") "@")
@@ -13,5 +16,8 @@
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
+(scroll-bar-mode -1)
+(global-company-mode 1)
 
 (provide 'config-general)
+;;; config-general.el ends here
