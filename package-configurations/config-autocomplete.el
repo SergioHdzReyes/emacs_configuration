@@ -1,7 +1,7 @@
 ;;; ac-php --- Summary
 ;;; Commentary:
 ;;; Code:
-(use-package company-mode)
+(use-package company)
 (use-package ac-php
   :init
   (add-hook 'php-mode-hook
