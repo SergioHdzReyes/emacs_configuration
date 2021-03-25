@@ -2,3 +2,8 @@ auto-save-list/
 elpa/
 ido.last
 transient/
+.cache/
+forge-database.sqlite
+*~
+installation-params
+tramp
