@@ -1,6 +1,7 @@
 ;;; magit --- Summary
 ;;; Commentary:
 ;;; Code:
+(use-package forge)
 (use-package magit
   :init
   (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)

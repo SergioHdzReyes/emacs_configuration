@@ -1,6 +1,7 @@
 ;;; ssh-deploy --- Summary
 ;;; Commentary:
 ;;; Code:
+(use-package tramp)
 (use-package ssh-deploy
   :init
   ;;; (ssh-deploy-line-mode)

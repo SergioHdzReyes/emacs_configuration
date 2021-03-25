@@ -1,6 +1,7 @@
 ;;; ac-php --- Summary
 ;;; Commentary:
 ;;; Code:
+(use-package company-mode)
 (use-package ac-php
   :init
   (add-hook 'php-mode-hook
@@ -26,6 +27,7 @@
 	     )
 	  )
   )
+(global-company-mode 1)
 
 (provide 'config-autocomplete)
 ;;; config-autocomplete.el ends here
