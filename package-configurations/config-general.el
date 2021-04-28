@@ -27,7 +27,10 @@
                     (t              `(,(car old) ,arg)))))
     (if elt (setcdr elt new) (push `(alpha ,@new) default-frame-alist))
     (set-frame-parameter nil 'alpha new)))
-(global-set-key (kbd "C-c t") 'set-frame-alpha)
+
+(set-frame-alpha 82)
+
+(global-set-key (kbd "C-s-n") 'other-frame)
 
 (provide 'config-general)
 ;;; config-general.el ends here
