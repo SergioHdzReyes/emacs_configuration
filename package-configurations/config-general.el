@@ -31,6 +31,8 @@
 (set-frame-alpha 82)
 
 (global-set-key (kbd "C-s-n") 'other-frame)
+(global-set-key (kbd "C-s-p") 'next-window-any-frame)
+(global-set-key (kbd "C-s-o") 'comint-clear-buffer)
 
 (provide 'config-general)
 ;;; config-general.el ends here
