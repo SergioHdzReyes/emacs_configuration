@@ -46,8 +46,6 @@
  '(custom-safe-themes
    (quote
     ("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default)))
- '(flycheck-highlighting-mode (quote lines))
- '(flycheck-indication-mode (quote left-margin))
  '(global-display-line-numbers-mode t)
  '(package-selected-packages
    (quote
