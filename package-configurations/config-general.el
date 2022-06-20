@@ -17,7 +17,7 @@
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
-;;; (scroll-bar-mode -1)
+(menu-bar-mode 0)
 
 (defun set-frame-alpha (arg &optional active)
   (interactive "nEnter alpha value (1-100): \np")
@@ -62,6 +62,8 @@
 
 (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
 (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
+
+(setenv "mach" "/ssh:root@192.168.11.")
 
 (provide 'config-general)
 ;;; config-general.el ends here
