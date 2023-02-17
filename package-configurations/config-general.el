@@ -17,7 +17,9 @@
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
-;;; (scroll-bar-mode -1)
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 (defun set-frame-alpha (arg &optional active)
   (interactive "nEnter alpha value (1-100): \np")
@@ -59,6 +61,8 @@
       (progn
 	(re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" ))
     (end-of-line)))
+
+(set-frame-alpha 86)
 
 (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
 (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
