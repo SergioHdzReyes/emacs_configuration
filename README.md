@@ -2,8 +2,8 @@
 Configuracion personal para el editor de texto GNU/Emacs
 
 # Ambientes de programación por branch
-- Web - master
-- C   - c-environment
+- Web - web-environment
+- C   - master
 
 # Instalación
 
