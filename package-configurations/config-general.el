@@ -9,10 +9,10 @@
 ;;; (global-set-key (kbd "M-ç") "}")
 ;;; (global-set-key (kbd "M-+") "]")
 ;;; (global-set-key (kbd "M-ñ") "~")
-(global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
+(global-set-key (kbd "M-g M-k") 'kill-buffer-and-window)
 
-(global-set-key (kbd "C-c m") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-g m") 'comment-or-uncomment-region)
+(global-set-key (kbd "M-g M-b") 'ibuffer)
 
 ;; Appearance
 (global-hl-line-mode 1)
@@ -33,7 +33,7 @@
 
 (set-frame-alpha 82)
 
-(global-set-key (kbd "C-s-n") 'other-frame)
+(global-set-key (kbd "M-g M-f") 'other-frame)
 (global-set-key (kbd "C-s-p") 'next-window-any-frame)
 (global-set-key (kbd "C-s-o") 'comint-clear-buffer)
 
