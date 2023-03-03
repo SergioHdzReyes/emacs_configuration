@@ -14,7 +14,7 @@
  '(gdb-show-threads-by-default t)
  '(ispell-dictionary nil)
  '(package-selected-packages
-   '(diff-hl ag helm-ag wgrep-ag company flycheck multiple-cursors smartparens treemacs dracula-theme use-package forge))
+   '(dumb-jump diff-hl ag helm-ag wgrep-ag company flycheck multiple-cursors smartparens treemacs dracula-theme use-package forge))
  '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
