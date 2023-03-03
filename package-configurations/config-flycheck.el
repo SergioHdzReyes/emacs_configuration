@@ -5,9 +5,10 @@
   :ensure t
   :init
   (global-flycheck-mode)
-  ;;; (setq flycheck-php-phpmd-executable "/usr/local/bin/phpmd")
-  ;;; (setq flycheck-php-phpcs-executable "/usr/local/opt/php@7.2/bin/phpcs")
+  (setq flycheck-c/c++-gcc-executable "/usr/bin/gcc")
+  (setq flycheck-c/c++-cppcheck-executable "/usr/bin/cppcheck")
   (setq flycheck-checker-error-threshold 2000)
+  (setq flycheck-error-list-minimum-level t)
   )
 
 (provide 'config-flycheck)
