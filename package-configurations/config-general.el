@@ -9,15 +9,18 @@
 ;;; (global-set-key (kbd "M-ç") "}")
 ;;; (global-set-key (kbd "M-+") "]")
 ;;; (global-set-key (kbd "M-ñ") "~")
-(global-set-key (kbd "C-x C-k") 'kill-buffer-and-window)
-
-(global-set-key (kbd "C-c m") 'comment-or-uncomment-region)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
-(menu-bar-mode 0)
+;;; (scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
+;;; (global-whitespace-mode)
 
 (defun set-frame-alpha (arg &optional active)
   (interactive "nEnter alpha value (1-100): \np")
@@ -28,7 +31,6 @@
                     (t              `(,(car old) ,arg)))))
     (if elt (setcdr elt new) (push `(alpha ,@new) default-frame-alist))
     (set-frame-parameter nil 'alpha new)))
-(global-set-key (kbd "C-c t") 'set-frame-alpha)
 
 (defun xah-beginning-of-line-or-block ()
     (interactive)
@@ -60,8 +62,19 @@
 	(re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" ))
     (end-of-line)))
 
+(set-frame-alpha 86)
+
+(global-set-key (kbd "M-g M-k") 'kill-buffer-and-window)
+(global-set-key (kbd "M-g m") 'comment-or-uncomment-region)
+(global-set-key (kbd "M-g M-b") 'ibuffer)
+
 (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
 (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
+
+(global-set-key (kbd "M-g M-f") 'other-frame)
+(global-set-key (kbd "M-g M-b") 'other-window)
+(global-set-key (kbd "C-s-o") 'comint-clear-buffer)
+(global-set-key (kbd "M-g M-d") 'dumb-jump-go)
 
 (setenv "mach" "/ssh:root@192.168.11.")
 
