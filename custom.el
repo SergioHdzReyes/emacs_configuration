@@ -13,6 +13,8 @@
  '(gdb-many-windows t)
  '(gdb-show-threads-by-default t)
  '(ispell-dictionary nil)
+ '(google-translate-default-source-language "en")
+ '(google-translate-default-target-language "es")
  '(package-selected-packages
    '(dumb-jump diff-hl ag helm-ag wgrep-ag company flycheck multiple-cursors smartparens treemacs dracula-theme use-package forge))
  '(truncate-lines t))

@@ -31,6 +31,7 @@
 (require 'config-multiple-cursors)
 (require 'config-flycheck)
 (require 'config-autocomplete)
+(require 'config-translate)
 
 (provide 'init)
 
