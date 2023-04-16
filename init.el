@@ -32,6 +32,10 @@
 (require 'config-flycheck)
 (require 'config-autocomplete)
 (require 'config-translate)
+(require 'config-ggtags)
+(require 'config-helm-gtags)
+(require 'config-c)
+(require 'config-cedet)
 
 (provide 'init)
 

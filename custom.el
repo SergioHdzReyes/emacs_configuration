@@ -12,11 +12,13 @@
    '("b54bf2fa7c33a63a009f249958312c73ec5b368b1094e18e5953adb95ad2ec3a" default))
  '(gdb-many-windows t)
  '(gdb-show-threads-by-default t)
- '(ispell-dictionary nil)
  '(google-translate-default-source-language "en")
  '(google-translate-default-target-language "es")
+ '(helm-google-suggest-url
+   "https://encrypted.google.com/complete/search?output=toolbar&q=%s")
+ '(ispell-dictionary nil)
  '(package-selected-packages
-   '(dumb-jump diff-hl ag helm-ag wgrep-ag company flycheck multiple-cursors smartparens treemacs dracula-theme use-package forge))
+   '(ggtags dumb-jump diff-hl ag helm-ag wgrep-ag company flycheck multiple-cursors smartparens treemacs dracula-theme use-package forge))
  '(truncate-lines t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
