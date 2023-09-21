@@ -3,8 +3,10 @@
 
 ;;; Code:
 (require 'package)
+
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (package-initialize)
@@ -33,10 +35,11 @@
 (require 'config-flycheck)
 (require 'config-autocomplete)
 (require 'config-translate)
-(require 'config-ggtags)
-(require 'config-helm-gtags)
+;;; (require 'config-ggtags)
+;;;(require 'config-helm-gtags)
 (require 'config-c)
 (require 'config-cedet)
+(require 'config-helm)
 
 (provide 'init)
 
