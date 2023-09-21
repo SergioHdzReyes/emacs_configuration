@@ -66,7 +66,7 @@
 (global-set-key (kbd "M-g M-f") 'other-frame)
 (global-set-key (kbd "M-g M-b") 'other-window)
 (global-set-key (kbd "C-s-o") 'comint-clear-buffer)
-(global-set-key (kbd "M-g M-d") 'dumb-jump-go)
+(global-set-key (kbd "M-g M-d") 'dumb-jump-hydra/body)
 (global-set-key (kbd "M-g M-u") 'compile)
 
 

@@ -22,6 +22,7 @@
 (add-to-list 'load-path "~/.emacs.d/package-configurations")
 
 (require 'config-searcher)
+(require 'config-dumb-jump)
 (require 'config-magit)
 (require 'config-general)
 (require 'config-ido)

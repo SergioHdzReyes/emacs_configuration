@@ -1,5 +1,5 @@
 ;;; DUMB-JUMO-GO
-(use-package dump-jump
+(use-package dumb-jump
   :init
   (setq dumb-jump-force-searcher 'ag)
   (defhydra dumb-jump-hydra (:color blue :columns 3)
