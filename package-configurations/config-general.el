@@ -2,14 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; (global-set-key (kbd "s-º") "\\")
-;;; (global-set-key (kbd "s-1") "|")
-;;; (global-set-key (kbd "s-2") "@")
-;;; (global-set-key (kbd "s-3") "#")
-;;; (global-set-key (kbd "M-ç") "}")
-;;; (global-set-key (kbd "M-+") "]")
-;;; (global-set-key (kbd "M-ñ") "~")
-
 ;; Appearance
 (global-hl-line-mode 1)
 (show-paren-mode 1)
@@ -62,11 +54,11 @@
 	(re-search-forward "\n[\t\n ]*\n+" nil "NOERROR" ))
     (end-of-line)))
 
-(set-frame-alpha 86)
+(set-frame-alpha 100)
 
 (global-set-key (kbd "M-g M-k") 'kill-buffer-and-window)
 (global-set-key (kbd "M-g m") 'comment-or-uncomment-region)
-(global-set-key (kbd "M-g M-b") 'ibuffer)
+;;(global-set-key (kbd "M-g M-b") 'ibuffer)
 
 (global-set-key (kbd "C-a") 'xah-beginning-of-line-or-block)
 (global-set-key (kbd "C-e") 'xah-end-of-line-or-block)
@@ -80,6 +72,9 @@
 
 (global-set-key (kbd "C-c h g") 'helm-google-suggest)
 
+;; Sessions
+(desktop-save-mode 1)
+;; (setq desktop-path "~/.emacs/")
 
 (provide 'config-general)
 ;;; config-general.el ends here
