@@ -11,6 +11,7 @@
   (setq ag-reuse-buffers t)
 
   (setq helm-ag-base-command "ag --nocolor --nogroup --ignore-case")
+  (setq helm-ag-ignore-patterns '("*.in"))
   (global-set-key (kbd "M-g M-s") 'helm-do-ag)
 )
 

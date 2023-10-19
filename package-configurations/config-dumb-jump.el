@@ -1,4 +1,6 @@
-;;; DUMB-JUMO-GO
+;;; custom --- Summary
+;;; Commentary:
+;;; Code:
 (use-package dumb-jump
   :init
   (setq dumb-jump-force-searcher 'ag)
@@ -13,3 +15,4 @@
     ("b" dumb-jump-back "Back")))
 
 (provide 'config-dumb-jump)
+;;; config-dumb-jump.el ends here
